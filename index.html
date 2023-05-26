@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reverse Number</title>
+  </head>
+  <body>
+    <h1>Reverse Number</h1>
+
+    <input type="text" id="inputNumber" placeholder="Enter a number" />
+    <button onclick="reverseAndPrint()">Reverse</button>
+
+    <div id="output"></div>
+
+    <script>
+      function reverse_a_number(num) {
+        let reversed_num = 0;
+        while (num !== 0) {
+          reversed_num = reversed_num * 10 + (num % 10);
+          num = Math.floor(num / 10);
+        }
+        return reversed_num;
+      }
+
+      function reverseAndPrint() {
+        const inputElement = document.getElementById("inputNumber");
+        const num = parseInt(inputElement.value);
+        console.log("Original number: " + num);
+        const result = reverse_a_number(num);
+        console.log("Reversed number: " + result);
+        document.getElementById("output").textContent =
+          "Reversed number: " + result;
+      }
+    </script>
+  </body>
+</html>
